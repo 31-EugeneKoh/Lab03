@@ -8,11 +8,12 @@ public class BasketMovementScript : MonoBehaviour
 {
     public float speed;
     private int healthyCount;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        ItemsCollected();
+
     }
 
     // Update is called once per frame
@@ -21,6 +22,10 @@ public class BasketMovementScript : MonoBehaviour
       float horizontalInput = Input.GetAxis("Horizontal");
 
       transform.position = transform.position + new Vector3(horizontalInput * speed * Time.deltaTime, 0, 0);
+
+      ItemsCollected();
+
+      scoreText.text = "Score: " + healthyCount;
     }
 
     private void OnCollisionEnter(Collision other)
