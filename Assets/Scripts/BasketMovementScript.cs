@@ -46,7 +46,7 @@ public class BasketMovementScript : MonoBehaviour
     {
         if (healthyCount >= 5)
         {
-            SceneManager.LoadScene("WinScene");
+            SceneManager.LoadScene("GamePlay_Level2");
         }
     }
 }
